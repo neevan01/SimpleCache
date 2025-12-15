@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>SimpleCache</RootNamespace>
+
+    <!-- NuGet Package Metadata -->
+    <PackageId>SimpleCache</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Nabin Ghimire</Authors>
+    <Company>Code Sprout Pvt. Ltd.</Company>
+    <Description>A lightweight, fluent wrapper for IMemoryCache with automatic serialization, cache stampede prevention, error handling, and optional logging. Simplifies in-memory caching with a clean API.</Description>
+    <PackageTags>cache;memory;memorycaching;caching;performance;fluent-api;dotnet;netstandard</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReleaseNotes>Initial release with fluent API, automatic serialization, cache stampede prevention, and logging support.</PackageReleaseNotes>    <RepositoryUrl>https://github.com/neevan01/SimpleCache</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeSymbols>false</IncludeSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath ="\"/>
+    <None Include="..\..\LICENSE" Pack="true" PackagePath ="\"/>
+  </ItemGroup>
+</Project>
