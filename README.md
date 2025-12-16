@@ -1,4 +1,4 @@
-# SimpleCache
+# CS.SimpleCache
 
 A lightweight, fluent wrapper for IMemoryCache with automatic serialization, cache stampede prevention, error handling, and optional logging. Simplifies in-memory caching with a clean API.
 **Note.** v1.0.0 provides in-memory caching only. Redis and distributed cache providers are planned for v2.0.0.
@@ -19,7 +19,7 @@ A lightweight, fluent wrapper for IMemoryCache with automatic serialization, cac
 ## Installation
 
 ```bash
-dotnet add package SimpleCache
+dotnet add package CS.SimpleCache
 ```
 
 ## Quick Start

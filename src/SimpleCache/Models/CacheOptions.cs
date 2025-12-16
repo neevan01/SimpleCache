@@ -26,5 +26,11 @@ namespace SimpleCache.Models
         /// Enable cache statistics tracking (default: false)
         /// </summary>
         public bool EnableStatistics { get; set; } = false;
+
+        /// <summary>
+        /// Use sliding expiration instead of absolute (default: false)
+        /// When true, cache expiration resets on each access
+        /// </summary>
+        public bool UseSlidingExpiration { get; set; } = false;
     }
 }

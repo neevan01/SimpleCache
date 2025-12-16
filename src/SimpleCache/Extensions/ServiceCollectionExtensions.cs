@@ -22,7 +22,8 @@ namespace SimpleCache.Extensions
             services.AddSingleton<ICacheProvider>(sp =>
                 new MemoryCacheProvider(
                     sp.GetRequiredService<IMemoryCache>(),
-                    options.EnableSerialization));
+                    options.EnableSerialization, 
+                    options.UseSlidingExpiration));
             services.AddSingleton<ISimpleCache>(sp =>
                 new SimpleCacheService(
                     sp.GetRequiredService<ICacheProvider>(),
@@ -39,7 +40,8 @@ namespace SimpleCache.Extensions
             services.AddSingleton<ICacheProvider>(sp =>
                 new MemoryCacheProvider(
                     sp.GetRequiredService<IMemoryCache>(),
-                    options.EnableSerialization));
+                    options.EnableSerialization,
+                    options.UseSlidingExpiration));
             services.AddSingleton<ISimpleCache>(sp =>
                 new SimpleCacheService(
                     sp.GetRequiredService<ICacheProvider>(),

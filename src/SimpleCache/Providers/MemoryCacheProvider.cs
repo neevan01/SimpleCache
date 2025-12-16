@@ -1,6 +1,6 @@
-using SimpleCache.Abstractions;
 using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json;
+using SimpleCache.Abstractions;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,11 +14,13 @@ namespace SimpleCache.Providers
     {
         private readonly IMemoryCache _memoryCache;
         private readonly bool _enableSerialization;
+        private readonly bool _useSlidingExpiration;
 
-        public MemoryCacheProvider(IMemoryCache memoryCache, bool enableSerialization = true)
+        public MemoryCacheProvider(IMemoryCache memoryCache, bool enableSerialization = true, bool useSlidingExpiration = false)
         {
             _memoryCache = memoryCache ?? throw new ArgumentNullException(nameof(memoryCache));
             _enableSerialization = enableSerialization;
+            _useSlidingExpiration = useSlidingExpiration;
         }
 
         public Task<T?> GetAsync<T>(string key, CancellationToken cancellationToken = default)
@@ -45,11 +47,15 @@ namespace SimpleCache.Providers
         {
             try
             {
-                var options = new MemoryCacheEntryOptions
+                var options = new MemoryCacheEntryOptions();
+                if (_useSlidingExpiration)
                 {
-                    AbsoluteExpirationRelativeToNow = expiration
-                };
-
+                    options.SlidingExpiration = expiration;
+                }
+                else
+                {
+                    options.AbsoluteExpirationRelativeToNow = expiration;
+                }
                 if (_enableSerialization)
                 {
                     var json = JsonConvert.SerializeObject(value);

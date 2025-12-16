@@ -7,14 +7,15 @@
     <RootNamespace>SimpleCache</RootNamespace>
 
     <!-- NuGet Package Metadata -->
-    <PackageId>SimpleCache</PackageId>
-    <Version>1.0.0</Version>
+    <PackageId>CS.SimpleCache</PackageId>
+    <Version>1.1.0</Version>
     <Authors>Nabin Ghimire</Authors>
     <Company>Code Sprout Pvt. Ltd.</Company>
     <Description>A lightweight, fluent wrapper for IMemoryCache with automatic serialization, cache stampede prevention, error handling, and optional logging. Simplifies in-memory caching with a clean API.</Description>
     <PackageTags>cache;memory;memorycaching;caching;performance;fluent-api;dotnet;netstandard</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageReleaseNotes>Initial release with fluent API, automatic serialization, cache stampede prevention, and logging support.</PackageReleaseNotes>    <RepositoryUrl>https://github.com/neevan01/SimpleCache</RepositoryUrl>
+    <PackageReleaseNotes>Added the sliding expiration support.</PackageReleaseNotes>    
+    <RepositoryUrl>https://github.com/neevan01/SimpleCache</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
